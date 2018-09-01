@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2>{{ track.artist }} - {{ track.title }}</h2>
+<div class="album py-5 bg-light">
+    <h3 style='text-align: center;'>Lessons</h3>
+    <div class="container">
+        <div class="row">
+            {% for lesson in lessons %}
+                <div class="col-md-6">
+                    <div>
+                        <iframe width="560" height="315" src="{{ lesson.url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <h3 style='text-align: center;'>Backing Tracks</h3>
+    <div class="container">
+        <div class="row">
+            {% for back in backs %}
+                <div class="col-md-6">
+                    <div>
+                        <iframe width="560" height="315" src="{{ back.url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
